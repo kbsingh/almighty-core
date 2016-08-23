@@ -19,4 +19,5 @@ type WorkItemTypeRepository interface {
 	Load(ctx context.Context, name string) (*app.WorkItemType, error)
 	Create(ctx context.Context, extendedTypeID *string, name string, fields map[string]app.FieldDefinition) (*app.WorkItemType, error)
 	Delete(ctx context.Context, name string) error
+	List(ctx context.Context, criteria criteria.Expression, start *int, length *int) ([]*app.WorkItemType, error)
 }
