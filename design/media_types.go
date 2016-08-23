@@ -91,7 +91,6 @@ var workItemType = MediaType("application/vnd.workitemtype+json", func() {
 	Required("version")
 	Required("name")
 	Required("fields")
-	Required("parentPath")
 
 	View("default", func() {
 		Attribute("version")
