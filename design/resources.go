@@ -148,7 +148,7 @@ var _ = Resource("workitemtype", func() {
 			Param("page", String, "Paging in the format <start>,<limit>")
 		})
 		Response(OK, func() {
-			Media(CollectionOf(WorkItemType))
+			Media(CollectionOf(workItemType))
 		})
 		Response(BadRequest, func() {
 			Media(ErrorMedia)
