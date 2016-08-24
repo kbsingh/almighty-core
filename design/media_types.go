@@ -96,7 +96,6 @@ var workItemType = MediaType("application/vnd.workitemtype+json", func() {
 		Attribute("version")
 		Attribute("name")
 		Attribute("fields")
-		Attribute("parentPath")
 	})
 	View("link", func() {
 		Attribute("name")
