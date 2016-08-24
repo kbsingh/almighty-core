@@ -124,12 +124,9 @@ func (r *GormWorkItemTypeRepository) Delete(ctx context.Context, name string) er
 
 // List returns work item types selected by the given criteria.Expression, starting with start (zero-based) and returning at most "limit" item types
 func (r *GormWorkItemTypeRepository) List(ctx context.Context, criteria criteria.Expression, start *int, limit *int) ([]*app.WorkItemType, error) {
-	where, parameters, err := Compile(criteria)
-	if err != nil {
-		return nil, BadParameterError{"expression", criteria}
-	}
-
-	log.Printf("executing query: '%s' with params %v", where, parameters)
+	// Currently we don't implement filtering here, so leave this empty
+	var where string
+	var parameters []interface{}
 
 	var rows []WorkItemType
 	db := r.ts.tx.Where(where, parameters)
