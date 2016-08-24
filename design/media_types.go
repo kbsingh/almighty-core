@@ -83,10 +83,10 @@ var fieldType = Type("fieldType", func() {
 // workItemType is the media type representing a work item type.
 var workItemType = MediaType("application/vnd.workitemtype+json", func() {
 	TypeName("WorkItemType")
-	Description("A work item type describes the values a work item instance can hold.")
+	Description("A work item type describes the values a work item type instance can hold.")
 	Attribute("version", Integer, "Version for optimistic concurrency control")
-	Attribute("name", String, "User Readable Name of this item")
-	Attribute("fields", HashOf(String, fieldDefinition), "Definitions of fields in this work item")
+	Attribute("name", String, "User Readable Name of this item type")
+	Attribute("fields", HashOf(String, fieldDefinition), "Definitions of fields in this work item type")
 
 	Required("version")
 	Required("name")
